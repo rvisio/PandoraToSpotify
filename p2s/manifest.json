@@ -1,0 +1,20 @@
+{
+    "manifest_version": 2,
+    "name": "Pandora To Spotify",
+    "version": "0.1",
+    "permissions": [
+      "activeTab",
+      "debugger",
+      "tabs"
+    ],
+
+    "browser_action": {
+        "default_action": "Click this",
+        "default_popup": "popup.html"
+    },
+    "description": "Add thumbed up songs from pandora to a Spotify Playlist",
+    "background":{
+        "scripts": ["p2s.js"],
+        "persistent":false
+    }
+}
