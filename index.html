@@ -1,0 +1,46 @@
+<script language="JavaScript" type="text/javascript" src="jquery-3.1.0.min.js"></script>
+
+
+<input id="clickMe" type="button" value="click me" onclick="doTheDeed();" />
+
+<script type="text/javascript">
+
+	function doTheDeed(){
+		alert("hello");
+
+		var arr = {'songInfo' : {'artist': 'walk the moon', 'song': 'anna sun'}};
+		//var jsonData = JSON.parse(arr);
+		console.log(arr);
+		var request = $.ajax({
+			url:"http://127.0.0.1:5000/songPost",
+			type:"POST",
+			/*headers: {
+			"Access-Control-Allow-Origin: ": "*",
+			},*/
+			data: JSON.stringify(arr),
+			dataType: "json",
+			contentType: "application/json",
+			success: function(msg) {
+				console.log("we did it");
+			}
+			});
+
+		console.log(request);
+		/*var request = $.ajax({
+			url: "127.0.0.1:5000/songs/",
+			type:"POST",
+			data : JSON.stringify(arr),
+			dataType:"json"
+			});*/
+
+		/*$.post("http://127.0.0.1:5000/song/",
+				{ 
+					json_string: JSON.stringify(arr),
+					headers: {
+					'Access-Control-Allow-Origins: ': '*'
+					},
+					dataTpe: 'json'
+				});*/
+		
+	}
+ </script>
